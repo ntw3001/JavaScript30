@@ -19,28 +19,80 @@
     }
 
     // Regular
+    console.log("hello")
 
     // Interpolated
+    console.log('Hello I am a %s string!', 'jjj')
+    // console.log(`Hello I am a ${variable} string!`);
 
     // Styled
+    console.log('%c I am text', 'font-size:50px; background:$ff4g23; text-shadow: 10px 0 blue')
 
     // warning!
+    console.warn("you are terrible")
 
     // Error :|
+    console.error("no")
 
     // Info
-
+    console.info("Never attempt to retrieve anything once a bear has it")
     // Testing
+    const p = document.querySelector("p");
+    console.assert(p.classList.contains("ouch"), "no")
+    // console.assert(1 === 2), "no you fool"
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`there is a dog named ${dog.name}`);
+      console.log(`it is ${dog.age} years old`);
+      console.log(`that's ${dog.age * 7} in dog years!`);
+      console.log(`although we\'re only counting up to the threshold of solar years so they may be up to ${dog.age * 7 + 6} and we wouldn\'t know`);
+      console.log('we don\'t respect dog culture, they orbit a different sun to us');
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.count('Grob');
+    console.count('Greb');
+    console.count('Grem');
+    console.count('Grob');
+    console.count('Greb');
+    console.count('Grob');
+    console.count('Grem');
+    console.count('Grop');
+    console.count('Grem');
+    console.count('Grob');
+    console.count('Greb');
+    console.count('Greb');
+    console.count('Grem');
+    console.count('Grem');
+    console.count('Grop');
+    console.count('Greb');
+    console.count('Grem');
+    console.count('Grob');
+    console.count('Greb');
+    console.count('Grob');
+    console.count('Grem');
+    console.count('Grop');
 
     // timing
+    console.time('fetching data')
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data =>{
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+      console.table(dogs);
 
   </script>
 </body>
